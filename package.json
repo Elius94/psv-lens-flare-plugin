@@ -1,0 +1,41 @@
+{
+  "name": "photo-sphere-viewer-lensflare-plugin",
+  "version": "0.0.1",
+  "description": "Plugin to add lens flares on a 360° pano built with photo-sphere-viewer",
+  "main": "index.js",
+  "module": "index.module.js",
+  "type": "module",
+  "scripts": {
+    "clean": "npx rimraf dist/",
+    "copy-files": "npx copyfiles -u 1 src/**/*.css dist/",
+    "build": "npm run clean && rollup -c && npm run copy-files",
+    "start": "rollup -c -w",
+    "prepare": "npm run build",
+    "predeploy": "cd example && npm install && npm run build",
+    "deploy": "gh-pages -d example/build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/elius94/photo-sphere-viewer-lensflare-plugin"
+  },
+  "keywords": [
+    "photo-sphere-viewer",
+    "lens",
+    "flare",
+    "lensflare",
+    "lens",
+    "flare"
+  ],
+  "files": [
+    "dist"
+  ],
+  "author": "Elia Lazzari",
+  "license": "MIT",
+  "dependencies": {
+    "@photo-sphere-viewer/core": "^5.0.2",
+    "three": "^0.148.0"
+  },
+  "devDependencies": {
+    "rollup": "^3.10.0"
+  }
+}
