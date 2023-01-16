@@ -8,8 +8,8 @@
   "scripts": {
     "clean": "npx rimraf dist/",
     "copy-files": "npx copyfiles -u 1 src/**/*.css dist/",
-    "build": "npm run clean && rollup -c && npm run copy-files",
-    "start": "rollup -c -w",
+    "build": "rollup --config rollup.config.mjs",
+    "start": "rollup -c rollup.config.mjs -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
     "deploy": "gh-pages -d example/build"
@@ -31,11 +31,16 @@
   ],
   "author": "Elia Lazzari",
   "license": "MIT",
-  "dependencies": {
+  "peerDependencies": {
     "@photo-sphere-viewer/core": "^5.0.2",
     "three": "^0.148.0"
   },
   "devDependencies": {
-    "rollup": "^3.10.0"
+    "@types/three": "^0.148.0",
+    "rollup": "^3.10.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-ts": "^3.1.1"
   }
 }
