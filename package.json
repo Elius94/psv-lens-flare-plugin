@@ -1,9 +1,9 @@
 {
   "name": "photo-sphere-viewer-lensflare-plugin",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "Plugin to add lens flares on a 360° pano built with photo-sphere-viewer",
-  "main": "index.js",
-  "module": "index.module.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
   "type": "module",
   "scripts": {
     "clean": "npx rimraf dist/",
