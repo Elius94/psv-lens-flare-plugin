@@ -7,7 +7,7 @@ export default {
     input: 'src/index.ts',
     output: [
         {
-            file: 'example/dist/index.js',
+            file: 'dist/index.js',
             format: 'umd',
             name: 'PhotoSphereViewerLensflarePlugin',
             sourcemap: true,
@@ -17,7 +17,7 @@ export default {
             },
         },
         {
-            file: 'example/dist/index.module.js',
+            file: 'dist/index.module.js',
             format: 'es',
             sourcemap: true,
         },
