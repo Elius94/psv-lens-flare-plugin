@@ -27,7 +27,7 @@ export class LensflareObject {
     readonly state = {
         dynamicSize: false,
         anchor: null as Point,
-        visible: true,
+        visible: false,
         position: null as Position,
         position2D: null as Point,
         positions3D: null as Vector3[],
@@ -42,11 +42,11 @@ export class LensflareObject {
         this.loader = new TextureLoader();
 
         this.textureFlare = {};
-        this.textureFlare["light"] = (this.loader.load(LIGHT));
-        this.textureFlare["flare1"] = (this.loader.load(FLARE_1));
-        this.textureFlare["flare2"] = (this.loader.load(FLARE_2));
-        this.textureFlare["flare3"] = (this.loader.load(FLARE_3));
-        this.textureFlare["diaphragm"] = (this.loader.load(HEXANGLE));
+        this.textureFlare["light"] = (this.loader.load(LIGHT, this.refreshAfterLoad));
+        this.textureFlare["flare1"] = (this.loader.load(FLARE_1, this.refreshAfterLoad));
+        this.textureFlare["flare2"] = (this.loader.load(FLARE_2, this.refreshAfterLoad));
+        this.textureFlare["flare3"] = (this.loader.load(FLARE_3, this.refreshAfterLoad));
+        this.textureFlare["diaphragm"] = (this.loader.load(HEXANGLE, this.refreshAfterLoad));
 
         if (!config.color) {
             this.config.color = { h: 0.08, s: 0.2, l: 0.5 };
@@ -68,6 +68,11 @@ export class LensflareObject {
         }
 
         this.update(config);
+    }
+
+    private refreshAfterLoad = (texture: Texture) => {
+        texture.anisotropy = 4;
+        this.viewer.needsUpdate();
     }
 
     destroy() {

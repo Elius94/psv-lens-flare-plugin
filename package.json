@@ -1,6 +1,6 @@
 {
   "name": "photo-sphere-viewer-lensflare-plugin",
-  "version": "0.9.2",
+  "version": "1.0.0",
   "description": "Plugin to add lens flares on a 360° pano built with photo-sphere-viewer",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -12,7 +12,8 @@
     "start": "rollup -c rollup.config.mjs -w",
     "prepare": "npm run build",
     "predeploy": "cd example && npm install && npm run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "test": "npx concurrently \"npm run start\" \"serve -p 3000 -s dist\" \"serve -p 8080 -s example\" \"start http://localhost:8080\""
   },
   "repository": {
     "type": "git",

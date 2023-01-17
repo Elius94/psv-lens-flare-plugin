@@ -14,7 +14,14 @@ export type LensflareConfig = {
      * Unique identifier of the lensflare
      */
     id: string;
-    type: number;
+    /**
+     * Type of the lensflare
+     * currently-supported: 0
+     * 
+     * @default 0
+     * @see LensflareType
+     */
+    type?: number;
     /**
      * Position of the lensflare (required but for `polygon` and `polyline`)
      */
@@ -47,23 +54,10 @@ export type LensflareConfig = {
      */
     opacity?: number;
     /**
-     * CSS class(es) added to the lensflare element (ignored for `imageLayer`)
-     */
-    className?: string;
-    /**
-     * CSS properties to set on the lensflare (background, border, etc.) (ignored for `imagerLayer`)
-     */
-    style?: Record<string, string>;
-    /**
      * Defines where the lensflare is placed toward its defined position
      * @default 'center center'
      */
     anchor?: string;
-    /**
-     * The zoom level which will be applied when calling `gotoLensflare()` method or when clicking on the lensflare in the list
-     * @default `current zoom level`
-     */
-    zoomLvl?: number;
     /**
      * Initial visibility of the lensflare
      * @default true

@@ -1,6 +1,5 @@
 import { AbstractPlugin, PSVError, Point, Viewer, events, utils } from '@photo-sphere-viewer/core';
 import { LensflareConfig, LensflarePluginConfig } from './model.js';
-import { LENSFLARE_DATA } from './constants.js';
 import { LensflareObject } from './LensflareObject.js';
 import { LensflareVisibilityEvent, LensflaresPluginEvents, SetLensflaresEvent } from './events.js';
 
@@ -258,15 +257,7 @@ export class LensflarePlugin extends AbstractPlugin<LensflaresPluginEvents> {
     }
 
     private __afterChangerLensflares() {
-        this.__checkObjectsObserver();
         this.viewer.needsUpdate();
         this.dispatchEvent(new SetLensflaresEvent(this.getLensflares()));
-    }
-
-    /**
-     * Adds or remove the objects observer if there are 3D lensflares
-     */
-    private __checkObjectsObserver() {
-        this.viewer.observeObjects(LENSFLARE_DATA);
     }
 }

@@ -17,7 +17,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
 
 <!-- Plugins -->
-<script src="./dist/index.js"></script>
+<script src="http://localhost:3000/index.js"></script>
 
 <!-- the viewer container must have a defined size -->
 <div id="viewer" style="width: 100vw; height: 100vh;"></div>
@@ -26,13 +26,19 @@
     const viewer = new PhotoSphereViewer.Viewer({
         container: document.querySelector('#viewer'),
         panorama: 'pano.jpg',
+        defaultYaw: 20.75,
+        defaultPitch: 0.17,
         plugins: [
             [PhotoSphereViewerLensflarePlugin, {
                 lensflares: [
                     {
                         id: 'sun',
                         position: { yaw: '145deg', pitch: '2deg' },
-                        type: 0,
+                    },
+                    {
+                        id: 'moon',
+                        position: { yaw: '30.6deg', pitch: '41.2deg' },
+                        color: { h: 0.6, s: 0.5, l: 0.2 },
                     }
                 ]
             }]
