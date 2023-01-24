@@ -3,6 +3,8 @@
 
  ![lensflare](https://user-images.githubusercontent.com/14907987/212742055-8db7599e-2e93-4303-b979-9762f803483d.gif)
 
+ [![NPM](https://img.shields.io/npm/v/photo-sphere-viewer-lensflare-plugin.svg)](https://www.npmjs.com/package/photo-sphere-viewer-lensflare-plugin) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Installation
 
 ### NPM

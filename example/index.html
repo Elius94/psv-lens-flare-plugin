@@ -18,6 +18,7 @@
 
 <!-- Plugins -->
 <script src="http://localhost:3000/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.min.js"></script>
 
 <!-- the viewer container must have a defined size -->
 <div id="viewer" style="width: 100vw; height: 100vh;"></div>
@@ -29,6 +30,10 @@
         defaultYaw: 20.75,
         defaultPitch: 0.17,
         plugins: [
+            [PhotoSphereViewer.AutorotatePlugin, {
+                autostartDelay: 1000,
+                autorotateSpeed: '2rpm',
+            }],
             [PhotoSphereViewerLensflarePlugin, {
                 lensflares: [
                     {
@@ -44,4 +49,28 @@
             }]
         ]
     });
+
+    const autorotatePlugin = viewer.getPlugin(PhotoSphereViewer.AutorotatePlugin);
+
+    const points = [
+        {
+            position: { yaw: '20.6deg', pitch: '21.2deg' },
+            pause: 0,
+        },
+        {
+            position: { yaw: '185deg', pitch: '2deg' },
+            pause: 0,
+        },
+        {
+            position: { yaw: '165deg', pitch: '-90deg' },
+            pause: 0,
+        },
+    ];
+
+    function randomPoints() {
+        autorotatePlugin.setKeypoints(points);
+    }
+
+    viewer.addEventListener('ready', randomPoints, { once: true });
+
 </script>
