@@ -28,7 +28,7 @@ yarn add photo-sphere-viewer-lensflare-plugin
 ### JavaScript
 
 ```js
-import PhotoSphereViewerLensflarePlugin from 'photo-sphere-viewer-lensflare-plugin';
+import { LensflarePlugin } from 'photo-sphere-viewer-lensflare-plugin';
 ```
 
 ```js
