@@ -36,7 +36,7 @@ const viewer = new PhotoSphereViewer.Viewer({
     container: document.querySelector('#viewer'),
     panorama: 'pano.jpg',
     plugins: [
-        [PhotoSphereViewerLensflarePlugin, {
+        [LensflarePlugin, {
             lensflares: [
                 {
                     id: 'sun',
