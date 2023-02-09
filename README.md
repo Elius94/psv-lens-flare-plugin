@@ -66,6 +66,122 @@ const viewer = new PhotoSphereViewer.Viewer({
 | `type` | `Number` | `0` | Type of the lens flare (available: 0) |
 | `color` | `HSL` | `{ h: 0.08, s: 0.2, l: 0.5 }` | Color of the lens flare |
 
+## Methods
+
+### `toggleAllLensflares`
+
+Toggle all lens flares.
+
+```js
+viewer.toggleAllLensflares();
+```
+
+### `showAllLensflares`
+
+Show all lens flares.
+
+```js
+viewer.showAllLensflares();
+```
+
+### `hideAllLensflares`
+
+Hide all lens flares.
+
+```js
+viewer.hideAllLensflares();
+```
+
+### `getNbLensflares`
+
+Get the number of lens flares.
+
+```js
+const nb = viewer.getNbLensflares();
+```
+
+### `getLensflares`
+
+Get all the lens flares.
+
+```js
+const lensflares: LensflareObject[] = viewer.getLensflares();
+```
+
+### `getLensflare`
+
+Get a lens flare.
+
+```js
+const lensflare: LensflareObject = viewer.getLensflare('sun');
+```
+
+### `addLensflare`
+
+Add a lens flare.
+
+```js
+lensflaresPlugin.addLensflare({
+    id: 'sun',
+    position: { yaw: '145deg', pitch: '2deg' },
+    type: 0,
+});
+```
+
+### `updateLensflare`
+
+Update a lens flare.
+
+```js
+lensflaresPlugin.updateLensflare({
+    id: 'sun',
+    position: { yaw: '145deg', pitch: '2deg' },
+    type: 0,
+});
+```
+
+### `removeLensflare`
+
+Remove a lens flare.
+
+```js
+lensflaresPlugin.removeLensflare('sun');
+```
+
+### `removeLensflares`
+
+Remove multiple lens flares.
+
+```js
+lensflaresPlugin.removeLensflares(['sun', 'moon']);
+```
+
+### `setLensflares`
+
+Clear all lens flares and add new ones.
+
+```js
+lensflaresPlugin.setLensflares([
+    {
+        id: 'sun',
+        position: { yaw: '145deg', pitch: '2deg' },
+        type: 0,
+    },
+    {
+        id: 'moon',
+        position: { yaw: '30.6deg', pitch: '41.2deg' },
+        type: 0,
+    }
+]);
+```
+
+### `clearLensflares`
+
+Clear all lens flares.
+
+```js
+lensflaresPlugin.clearLensflares();
+```
 
 ## Examples
 
