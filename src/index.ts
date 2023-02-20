@@ -61,10 +61,8 @@ export class LensflarePlugin extends AbstractPlugin<LensflaresPluginEvents> {
      * Toggles all lensflares
      */
     toggleAllLensflares() {
-        if (this.state.visible) {
-            this.hideAllLensflares();
-        } else {
-            this.showAllLensflares();
+        for (const lensflare of this.getLensflares()) {
+            this.toggleLensflare(lensflare);
         }
     }
 
@@ -72,18 +70,18 @@ export class LensflarePlugin extends AbstractPlugin<LensflaresPluginEvents> {
      * Shows all lensflares
      */
     showAllLensflares() {
-        this.state.visible = true;
-
-        this.renderLensflares();
+        for (const lensflare of this.getLensflares()) {
+            this.toggleLensflare(lensflare, true);
+        }
     }
 
     /**
      * Hides all lensflares
      */
     hideAllLensflares() {
-        this.state.visible = false;
-
-        this.renderLensflares();
+        for (const lensflare of this.getLensflares()) {
+            this.toggleLensflare(lensflare, false);
+        }
     }
 
     /**

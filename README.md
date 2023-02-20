@@ -228,3 +228,8 @@ const viewer = new PhotoSphereViewer.Viewer({
 ### Result of the example
 
 ![multilens](https://user-images.githubusercontent.com/14907987/212864401-fa0861c7-b089-4681-b290-dce7a4a7c669.gif)
+
+
+### CodeSandbox
+
+[![Edit photo-sphere-viewer-lensflare-plugin](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/photo-sphere-viewer-lensflare-plugin-2oz3zh?fontsize=14&hidenavigation=1&theme=dark)
