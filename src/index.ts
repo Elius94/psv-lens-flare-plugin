@@ -231,7 +231,7 @@ export class LensflarePlugin extends AbstractPlugin<LensflaresPluginEvents> {
     */
     toggleLensflare(lensflareId: string | LensflareConfig, visible?: boolean) {
         const lensflare = this.getLensflare(lensflareId);
-        lensflare.visible = visible === null ? !lensflare.visible : visible;
+        lensflare.visible = visible === undefined ? !lensflare.visible : visible;
         this.viewer.needsUpdate();
     }
 
