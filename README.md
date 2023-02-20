@@ -68,12 +68,20 @@ const viewer = new PhotoSphereViewer.Viewer({
 
 ## Methods
 
+To call methods you need to get the plugin instance.
+
+```js
+const lensflaresPlugin = viewer.getPlugin(LensflarePlugin);
+```
+
+and then you can call the methods.
+
 ### `toggleAllLensflares`
 
 Toggle all lens flares.
 
 ```js
-viewer.toggleAllLensflares();
+lensflaresPlugin.toggleAllLensflares();
 ```
 
 ### `showAllLensflares`
@@ -81,7 +89,7 @@ viewer.toggleAllLensflares();
 Show all lens flares.
 
 ```js
-viewer.showAllLensflares();
+lensflaresPlugin.showAllLensflares();
 ```
 
 ### `hideAllLensflares`
@@ -89,7 +97,7 @@ viewer.showAllLensflares();
 Hide all lens flares.
 
 ```js
-viewer.hideAllLensflares();
+lensflaresPlugin.hideAllLensflares();
 ```
 
 ### `getNbLensflares`
@@ -97,7 +105,7 @@ viewer.hideAllLensflares();
 Get the number of lens flares.
 
 ```js
-const nb = viewer.getNbLensflares();
+const nb = lensflaresPlugin.getNbLensflares();
 ```
 
 ### `getLensflares`
@@ -105,7 +113,7 @@ const nb = viewer.getNbLensflares();
 Get all the lens flares.
 
 ```js
-const lensflares: LensflareObject[] = viewer.getLensflares();
+const lensflares: LensflareObject[] = lensflaresPlugin.getLensflares();
 ```
 
 ### `getLensflare`
@@ -113,7 +121,7 @@ const lensflares: LensflareObject[] = viewer.getLensflares();
 Get a lens flare.
 
 ```js
-const lensflare: LensflareObject = viewer.getLensflare('sun');
+const lensflare: LensflareObject = lensflaresPlugin.getLensflare('sun');
 ```
 
 ### `addLensflare`
