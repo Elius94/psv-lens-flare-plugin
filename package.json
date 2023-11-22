@@ -1,6 +1,6 @@
 {
   "name": "photo-sphere-viewer-lensflare-plugin",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Plugin to add lens flares on a 360° pano built with photo-sphere-viewer",
   "main": "dist/index.js",
   "module": "dist/index.module.js",
@@ -33,7 +33,7 @@
   "author": "Elia Lazzari",
   "license": "MIT",
   "peerDependencies": {
-    "@photo-sphere-viewer/core": "^5.4.0",
+    "@photo-sphere-viewer/core": "^5.4.4",
     "three": "^0.158.0"
   },
   "devDependencies": {
