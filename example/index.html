@@ -13,28 +13,38 @@
     </style>
 </head>
 
-<script src="https://cdn.jsdelivr.net/npm/three/build/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.min.js"></script>
 
 <!-- Plugins -->
-<script src="http://localhost:3000/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.min.js"></script>
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three/build/three.module.js",
+            "@photo-sphere-viewer/core": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/core/index.module.js",
+            "@photo-sphere-viewer/autorotate-plugin": "https://cdn.jsdelivr.net/npm/@photo-sphere-viewer/autorotate-plugin/index.module.js",
+            "photo-sphere-viewer-lensflare-plugin": "http://localhost:3000/index.module.js"
+        }
+    }
+</script>
 
 <!-- the viewer container must have a defined size -->
 <div id="viewer" style="width: 100vw; height: 100vh;"></div>
 
-<script>
-    const viewer = new PhotoSphereViewer.Viewer({
+<script type="module">
+    import { Viewer } from '@photo-sphere-viewer/core';
+    import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
+    import { LensflarePlugin } from 'photo-sphere-viewer-lensflare-plugin';
+    
+    const viewer = new Viewer({
         container: document.querySelector('#viewer'),
         panorama: 'pano.jpg',
         defaultYaw: 20.75,
         defaultPitch: 0.17,
         plugins: [
-            [PhotoSphereViewer.AutorotatePlugin, {
+            [AutorotatePlugin, {
                 autostartDelay: 1000,
                 autorotateSpeed: '2rpm',
             }],
-            [PhotoSphereViewerLensflarePlugin, {
+            [LensflarePlugin, {
                 lensflares: [
                     {
                         id: 'sun',
@@ -50,7 +60,7 @@
         ]
     });
 
-    const autorotatePlugin = viewer.getPlugin(PhotoSphereViewer.AutorotatePlugin);
+    const autorotatePlugin = viewer.getPlugin(AutorotatePlugin);
 
     const points = [
         {

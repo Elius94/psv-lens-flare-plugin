@@ -20,6 +20,10 @@ export default {
             file: 'dist/index.module.js',
             format: 'es',
             sourcemap: true,
+            globals: {
+                'three': 'THREE',
+                '@photo-sphere-viewer/core': 'PhotoSphereViewer',
+            },
         },
     ],
     external: [
@@ -51,7 +55,7 @@ export default {
             },
             // this is only necessary for this demo, to override the "file" dependency
             additionalDependencies: {
-                '@photo-sphere-viewer/core': '^5.0.2',
+                '@photo-sphere-viewer/core': '^5.6.0',
             },
         }),
     ],
