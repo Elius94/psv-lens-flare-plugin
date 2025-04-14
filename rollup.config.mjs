@@ -55,7 +55,7 @@ export default {
             },
             // this is only necessary for this demo, to override the "file" dependency
             additionalDependencies: {
-                '@photo-sphere-viewer/core': '^5.6.0',
+                '@photo-sphere-viewer/core': '>=5.6.0',
             },
         }),
     ],
